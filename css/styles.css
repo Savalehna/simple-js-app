@@ -1,0 +1,43 @@
+
+body {
+  /* font-family = importet font (Head from html documents); sans-serif = fallback webfont found on the users computer */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+
+  /* Sets the font size to 16px */
+  line-height: 1.6;
+
+  /* Sets the line-height to 1.6 */
+  display: flex;
+  min-height: 100vh;
+  margin: 0.5rem 1rem;
+  flex-direction: column;
+}
+
+/* Box-sizing is applied to all elements. The box-sizing property allows us to include the padding and border in an element's total width and height.
+ Several elements can have the same size now. */
+* {
+  box-sizing: border-box;
+}
+
+/* Defines the look from heading h1 */
+h1 {
+  font-size: 30px;
+  font-weight: 900;
+  color: #0b610b;
+}
+
+/* Area within body, but over footer --> main-area; Without this, the footer is not placed at the end of the site */
+main {
+  flex: 1;
+}
+
+/* Places the footer at the end and middle from the website */
+.flex-container {
+  position: relative;
+  bottom: 0;
+  text-align: center;
+  margin: 1rem;
+  padding: 1rem;
+}
