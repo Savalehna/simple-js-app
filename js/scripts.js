@@ -1,5 +1,5 @@
-// Create variable and assign array for different pokemon-types
 
+// Create variable and assign array for different pokemon-types
 var repositoryArray = [
   {
     name: 'Nidoqueen',
@@ -17,13 +17,13 @@ var repositoryArray = [
     types: ['ice', 'water']
   }
 ]
+document.write('<h1>Pokemons:</h1>')
 
-// Create loop to iterate each item in repositoryArray
-
-for (var i = 0; i <= 2; i++) {
+// Create loop to iterate each item in repositoryArray; Check the height and show a message if height is above 1.7 --> "Wow, that's big!""
+for (var i = 0; i <= repositoryArray.length - 1; i++) {
   if (repositoryArray[i].height >= 1.7) {
-    document.write('<p>name: ' + repositoryArray[i].name + ' (height: ' + repositoryArray[i].height + ') Wow, that\'s big!</p>')
+    document.write('<main><li><b>Name: </b>' + repositoryArray[i].name + ' (Height: ' + repositoryArray[i].height + ') Wow, that\'s big!</li></main>')
   } else {
-    document.write('<p>name: ' + repositoryArray[i].name + ' (height: ' + repositoryArray[i].height + ')</p>')
+    document.write('<main><li><b>Name: </b>' + repositoryArray[i].name + ' (Height: ' + repositoryArray[i].height + ')</li></main>')
   }
 }
