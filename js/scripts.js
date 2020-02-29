@@ -1,7 +1,8 @@
 
-// Create variable and assign array for different pokemon-types
-var repositoryArray = [
-  {
+// Create variable and assign array for different pokemon-types.
+// Wrap repository array in an IIFE () () to avoid accidentally accessing the global state.
+var pokemonRepository = (function () {
+  var repository = [{
     name: 'Nidoqueen',
     height: 1.3,
     types: ['ground', ' poison']
@@ -15,21 +16,28 @@ var repositoryArray = [
     name: 'Dewgong',
     height: 1.7,
     types: ['ice', ' water']
+  }];
+
+// Function to add new Pokemon data
+  function add(pokemon) {
+    repository.push(pokemon);
   }
-]
 
-document.write('<h1>Pokemons:</h1>')
+// Function to pull all Pokemon data
+  function getAll() {
+    return repository;
+  }
 
-// Create loop to iterate each item in repositoryArray; Check the height and show a message if height is above 1.7 --> "Wow, that's big!""
-// for (var i = 0; i <= repositoryArray.length - 1; i++) {
-//  if (repositoryArray[i].height >= 1.7) {
-//    document.write('<main><li><b>Name: </b>' + repositoryArray[i].name + ' (Height: ' + repositoryArray[i].height + ') Wow, that\'s big!</li></main>')
-//  } else {
-//    document.write('<main><li><b>Name: </b>' + repositoryArray[i].name + ' (Height: ' + repositoryArray[i].height + ')</li></main>')
-//  }
-// }
+  return {
+    add: add,
+    getAll: getAll
+  };
+})();
 
- // ForEach function to loop over the Pokémon in the repositoryArray in order to print the details of each one.
-repositoryArray.forEach(function(item, index, array) {
-document.write('<b>Name: </b>' + item.name + ', Height: ' + item.height + ', Types: ' + item.types + '<div></div>')
+// Adds a single item (Pokemon)
+pokemonRepository.add({ name: 'Pikachu' });
+
+//Creates list of Pokemon:
+pokemonRepository.getAll().forEach(function(pokemon) {
+document.write('<b>Name: </b>' + pokemon.name + '<div></div>');
 });
