@@ -63,7 +63,7 @@ var pokemonRepository = (function () {
         return response.json();
       }).then(function (details) {
         // To add the details to each item:
-        // item.imageUrl = details.sprites.front_default;
+        item.imageUrl = details.sprites.front_default;
         item.height = details.height;
         item.types = Object.keys(details.types);
       }).catch(function (error) {
